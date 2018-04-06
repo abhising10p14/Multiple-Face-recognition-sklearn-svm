@@ -1,4 +1,4 @@
-#Face Recognition using Sklearn Svm and OpenCv
+# Face Recognition using Sklearn Svm and OpenCv
 
 This repository deals with enhacing the accuracy of face recognition method. Generally, on the internet, you would find everyone or most of the people using either the haarcascade, eigenface models provided by the openCv or the neuralnetwork models(Facenet,Nnet e.t.c) for face recognition. Even I have used the OpenCv haarcascade[https://github.com/abhising10p14/Face-Recognition-LBPH]. There are two shortcomes of both the approaches:
 
