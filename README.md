@@ -1,5 +1,5 @@
 # Face Recognition using Sklearn Svm and OpenCv
----------------------------------------------------------------------------------------------------------------------
+
 This repository deals with enhacing the accuracy of face recognition method. Generally, on the internet, you would find everyone or most of the people using either the haarcascade, eigenface models provided by the openCv or the neuralnetwork models(Facenet,Nnet e.t.c) for face recognition. Even I have used the OpenCv haarcascade[https://github.com/abhising10p14/Face-Recognition-LBPH]. There are two shortcomes of both the approaches:
 
 	1.In case of the Opencv haarcascade and the fischerface, the accuracy was not so good (60-70%)
@@ -23,7 +23,13 @@ In this repostory SVM is used to train the model using the training images(**orl
 3. Now put your testing images into the folder **test-data/data** folder.
 4. Run the command : **python conversion.py**  This will convert all your training as well as the testing images 
 	into the greyscale format supported by the svm classifier. Currently , **.jpeg, .jpg, .png** format is supported. If you want to add any other type of format then correspondingly change the code of conversion.py
-5. Now run the command **crop_faces.py**  This finds the faces in your test data and removes the rest part of the 
+5. Now run  **crop_faces.py**  This finds the faces in your test data and removes the rest part of the 
 	picture. for detecting the faces, haarcascad_frontal_faces.xml and eye_.xml have been used. These models are present in the **models** folder. After running this command check the subfolders of the orl_faces folder that there are not any such image in the subfolders where other parts of pictures other than the faces are present. If Found, delete them because they are going to affect your training model. You can add this as condition check in the crop_faces.py 
-5. Now run the command **multiple_faces.py**  This finds the faces in your test images. If faces are found, it saves 
-	the corresponding faces in the **output/data** folder. 
+5. Now run **multiple_faces.py**  This finds the faces in your test images. If faces are found, it saves 
+	the corresponding faces in the **output/data** folder. After runnig this command a new file **dictionary.txt** will be generated. This file maps the detected face to the original images of the **test-data/data**. This file is used to display the predicted names on the corresponding testing images.
+6. Now run  **svm.py** You need to run this command twice. First time, for training the model over the   
+	orl_faces and saving the model as **finalized_model.sav**. Second time, for the purpose of testing your model over the test-data.
+  
+ The accuracy over the current data set is 85.4% which can vary. To enhance the accuracy use proper good quality frontal face images. Accuaracy increase with increase in the sample size of the dataset.
+
+ For confusion, error, suggestion mail me at[abhisingh10p14@gmail.com]
