@@ -34,4 +34,5 @@ In this repostory SVM is used to train the model using the training images(**orl
 
  There might be an issue if you run this code on a windows os, because there the python treats the folder name's    
  **"/"** in a different way, make sure to change the code for treating the backslash as a raw string.
- For confusion, error, suggestion mail me [link](abhisingh10p14@gmail.com).
+
+ Regarding any confusion, error, suggestion mail me [link](abhisingh10p14@gmail.com).
