@@ -18,4 +18,12 @@ In this repostory SVM is used to train the model using the training images(**orl
 
 ## How to use?
 
-1. First of all put you training datset into the folder **orl_faces**. You can see the format in which images have been put in the corresponding folders.
+1. First of all put you training datset into the folder **orl_faces/data**. You can see the format in which images have been put in the corresponding folders. The name of the subfolder should be the name you want to predict when passing an image. Make sure you provide a good data set. The data set should have proper frontal faces for a better accuracy.
+2. Delete the current images present in the **output/data** folder.
+3. Now put your testing images into the folder **test-data/data** folder.
+4. Run the command : **python conversion.py**  This will convert all your training as well as the testing images 
+	into the greyscale format supported by the svm classifier. Currently , **.jpeg, .jpg, .png** format is supported. If you want to add any other type of format then correspondingly change the code of conversion.py
+5. Now run the command **crop_faces.py**  This finds the faces in your test data and removes the rest part of the 
+	picture. for detecting the faces, haarcascad_frontal_faces.xml and eye_.xml have been used. These models are present in the **models** folder. After running this command check the subfolders of the orl_faces folder that there are not any such image in the subfolders where other parts of pictures other than the faces are present. If Found, delete them because they are going to affect your training model. You can add this as condition check in the crop_faces.py 
+5. Now run the command **multiple_faces.py**  This finds the faces in your test images. If faces are found, it saves 
+	the corresponding faces in the **output/data** folder. 
